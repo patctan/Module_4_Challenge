@@ -13,17 +13,37 @@
     <a href="#HighScores">View High Scores</a>
     <div>Timer: </div>
 </header>
+    <!--Need a container for the question, container for the answer choices (which will be buttons), a Start button, a submit form, and buttons for 
+        1)"go back,
+        2)"Clear High Scores"
     
+    3)"questionContainer" and "genButton" need to be linked to arrays with questions and answer choices, respectively.
+    4)Code needs to be added to script.js to display and hide elements appropriately-->
 <section class="card">
-    <div class="container"></div>
-    <h1 id="question">filler text</h1>
-    <p id="a1">here's some yummy text</p>
-    <p id="a2">idk what I'm doing lol</p>
-    <p id="a3">Wow focusing is hard</p>
-    <p id="a4">I hope I finish this soon</p>
-    <button id="">Start</button>
-    <button id="next">Next</button>
+    <div id="startText"> This short quiz is designed to help you with studying for this Coding Bootcamp, 
+        and it will consist of five questions. Each incorrect answer will subtract 5 seconds 
+        from your total time. When you finish, please input your information to view your high 
+        scores.</div>
+    <div id="questionContainer" class="hide">Filler Text
+        <div class="choices">
+            <button class="genButton">A</button>
+            <button class="genButton">B</button>
+            <button class="genButton">C</button>
+            <button class="genButton">D</button>
+        </div>
+        <form id="submitForm" >
+            <label for="Initials" class="hide">Enter Initials:</label>
+            <input type="text" id="Initials" class="hide">
+            <input type="submit" class="hide">
+        </form>
+    </div>
+        <button id="start" class="start2">Start</button>
+        <button id="goBack" class="hide">Go Back</button>
+        <button id="clearHighScores" class="hide">Clear High Scores</button>
 </section>
+
+<script src="myscripts.js"></script>
+</body>
 <!-- AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers

@@ -2,5 +2,9 @@
 
 var questions = document.getElementById("question");
 
+function startQuiz() {
+
+};
+
 questions = ["persona", "emblem", "xenoblade", "fluff"];
 //there's a display function?

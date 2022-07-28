@@ -2,10 +2,39 @@
     box-sizing: border-box;
 }; */
 
-h1 {
-    font-size: 50px;
-    color: green;
+header a {
+    position: fixed;
+    left:0%;
 }
+
+header div {
+    position: fixed;
+    right: 10%;
+}
+
+.hide {
+    display: none;
+}
+
+.choices button {
+    border: 5px;
+    padding: 10px;
+    display: block;
+    margin: 5px;
+    
+}
+
+.choices button:hover {
+    border-color:black;
+}
+
+#submitForm {
+    display:flex;
+    justify-content:center;
+
+}
+
+
 
 .card {
     position: fixed;
@@ -20,6 +49,8 @@ h1 {
     transform: translate(-50%, -50%);
     
 };
+
+
 
 
 
