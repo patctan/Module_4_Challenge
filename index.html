@@ -11,26 +11,17 @@
 
 <header>
     <a href="#HighScores">View High Scores</a>
-    <div>Timer: </div>
+    <p id="timer">1:00 </p>
 </header>
-    <!--Need a container for the question, container for the answer choices (which will be buttons), a Start button, a submit form, and buttons for 
-        1)"go back,
-        2)"Clear High Scores"
-    
-    3)"questionContainer" and "genButton" need to be linked to arrays with questions and answer choices, respectively.
-    4)Code needs to be added to script.js to display and hide elements appropriately-->
+   
 <section class="card">
     <div id="startText"> This short quiz is designed to help you with studying for this Coding Bootcamp, 
         and it will consist of five questions. Each incorrect answer will subtract 5 seconds 
         from your total time. When you finish, please input your information to view your high 
         scores.</div>
-    <div id="questionContainer" class="hide">Filler Text
-        <div class="choices">
-            <button class="genButton">A</button>
-            <button class="genButton">B</button>
-            <button class="genButton">C</button>
-            <button class="genButton">D</button>
-        </div>
+    <div id="questionContainer"></div>
+    <div id="showCheck"></div>
+    
         <form id="submitForm" >
             <label for="Initials" class="hide">Enter Initials:</label>
             <input type="text" id="Initials" class="hide">
@@ -42,7 +33,7 @@
         <button id="clearHighScores" class="hide">Clear High Scores</button>
 </section>
 
-<script src="myscripts.js"></script>
+<script src="script.js"></script>
 </body>
 <!-- AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores

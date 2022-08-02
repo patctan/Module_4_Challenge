@@ -7,7 +7,7 @@ header a {
     left:0%;
 }
 
-header div {
+header p {
     position: fixed;
     right: 10%;
 }
@@ -19,13 +19,20 @@ header div {
 .choices button {
     border: 5px;
     padding: 10px;
-    display: block;
+   /* display: block; */
     margin: 5px;
     
 }
 
-.choices button:hover {
-    border-color:black;
+.choices {
+    display: flex;
+    flex-direction:column;
+    justify-content:start;
+}
+
+
+.choices button :hover {
+    background-color:green;
 }
 
 #submitForm {
