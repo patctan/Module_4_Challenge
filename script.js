@@ -4,6 +4,7 @@
 
 //function startQuiz() {
 
+var score = 100;
 
 
 var questions = [
@@ -50,10 +51,11 @@ function showQuestions(){
     document.getElementById('questionContainer').innerHTML=`
     <div>${questions[i].title}</div>
     <div class="choices">
-            <button>${questions[i].choices[0]}</button>
+            <button class="button">${questions[i].choices[0]}</button>
             <button class="button">${questions[i].choices[1]}</button>
             <button class="button">${questions[i].choices[2]}</button>
             <button class="button">${questions[i].choices[3]}</button>
+            
     </div>
 `
 }
@@ -97,11 +99,14 @@ document.querySelector('#questionContainer').onclick = function(event){
         document.querySelector("#showCheck").innerHTML=`
         <h3>Wrong!</h3>`
         time= time-5;
+        score= score-20;
         //score deducted //time deducted
     }
 
     i++
     showQuestions()
-}
+  }
+
+  
 
 //there's a display function?
