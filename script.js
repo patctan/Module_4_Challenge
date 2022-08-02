@@ -6,7 +6,7 @@
 
 var score = 100;
 
-
+//Questions for the quiz
 var questions = [
     {
       title: "Commonly used data types DO NOT include:",
@@ -48,6 +48,12 @@ var i=0
 function showQuestions(){
     if (i< questions.length)
 
+    //var goThruQuestions = document.getElementById('questionContainer');
+
+    //goThruQuestions.addEventListener("click", function (event)) {
+      //if(event.target.id === questions[2].answer) {
+          //console.log("correct");}
+
     document.getElementById('questionContainer').innerHTML=`
     <div>${questions[i].title}</div>
     <div class="choices">
@@ -61,7 +67,7 @@ function showQuestions(){
 }
 
 
-
+//Timer for the Quiz
   document.getElementById('start').onclick = function(){
     const startingMinutes = 1;
 
@@ -80,6 +86,8 @@ function showQuestions(){
       timerEl.innerHTML = `${minutes}: ${seconds}`;
       time--;
     };
+
+    //document.getElementById('start').style.display= "none"
     //add timer
     document.getElementById('startText').style.display= "none" 
     showQuestions()}   
