@@ -66,16 +66,19 @@ function showQuestions(){
 `
 }
 
+let time;
 
 //Timer for the Quiz
   document.getElementById('start').onclick = function(){
     const startingMinutes = 1;
 
-    let time = startingMinutes * 60;
+     time = startingMinutes * 60;
 
     const timerEl = document.getElementById('timer');
 
-    setInterval(updateTimer, 1000);
+     setInterval(updateTimer, 1000);
+
+    // const myInterval = setInterval;
 
     function updateTimer() {
       const minutes = Math.floor(time/60);
@@ -85,7 +88,16 @@ function showQuestions(){
 
       timerEl.innerHTML = `${minutes}: ${seconds}`;
       time--;
+
     };
+
+    // function stopTimer() {
+    //   if(time == 0) {
+    //     clearInterval(myInterval);
+    //   }
+    // };
+    
+    // stopTimer();
 
     //document.getElementById('start').style.display= "none"
     //add timer
@@ -93,27 +105,46 @@ function showQuestions(){
     showQuestions()}   
     //document.getElementById('questionContainer').style.display = "block"
 
-
-document.querySelector('#questionContainer').onclick = function(event){
+    document.querySelector('#questionContainer').onclick = function(event){
    
     console.log('clicked!')
     console.log(event.target.innerText)
 
     if (event.target.innerText === questions[i].answer){
-        document.querySelector("#showCheck").innerHTML=`
-        <h3>Correct!</h3>`
-    }else {
+      document.querySelector("#showCheck").innerHTML=`
+      <h3>Correct!</h3>`
+  }else {
 
-        document.querySelector("#showCheck").innerHTML=`
-        <h3>Wrong!</h3>`
-        time= time-5;
-        score= score-20;
-        //score deducted //time deducted
+      document.querySelector("#showCheck").innerHTML=`
+      <h3>Wrong!</h3>`
+      console.log("wrong");
+      time = time -= 5;
+      score = score -= 20;
+      //score deducted //time deducted
     }
+  i++
+  showQuestions()
+    }
+//document.querySelector('#questionContainer').onclick = function(event){
+   
+    //console.log('clicked!')
+    //console.log(event.target.innerText)
 
-    i++
-    showQuestions()
-  }
+    //if (event.target.innerText === questions[i].answer){
+        //document.querySelector("#showCheck").innerHTML=`
+        //<h3>Correct!</h3>`
+   // }else {
+
+        //document.querySelector("#showCheck").innerHTML=`
+        //<h3>Wrong!</h3>`
+        //time= time-5;
+       // score= score-20;
+        //score deducted //time deducted
+    //}
+
+    //i++
+    //showQuestions()
+ // }
 
   
 
