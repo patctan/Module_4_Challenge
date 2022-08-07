@@ -3,69 +3,59 @@
 }; */
 
 header a {
-    position: fixed;
-    left:0%;
+  position: fixed;
+  left: 0%;
 }
 
 header p {
-    position: fixed;
-    right: 10%;
+  position: fixed;
+  right: 10%;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .choices button {
-    border: 5px;
-    padding: 10px;
-   /* display: block; */
-    margin: 5px;
-    
+  border: 5px;
+  padding: 10px;
+  /* display: block; */
+  margin: 5px;
 }
 
 .choices {
-    display: flex;
-    flex-direction:column;
-    justify-content:start;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
-
 
 .choices button :hover {
-    background-color:green;
+  background-color: green;
 }
-
+/* Change it from display: flex to something else */
 #submitForm {
-    display:flex;
-    justify-content:center;
-
+  position: relative;
+  top: 50%;
+  /*display: none;*/
+  /*display: flex;
+  justify-content: center; */
 }
-
-
 
 .card {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    border: 2px;
-    margin: 10px;
-    border-radius:10px;
-    border-color: black;
-    border-style:solid;
-    padding: 50px;
-    transform: translate(-50%, -50%);
-    
-};
-
-
-
-
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  border: 2px;
+  margin: 10px;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  padding: 50px;
+  transform: translate(-50%, -50%);
+}
 
 /* Mark cards as display:none, and will only be displayed IN ORDER once the appropriate button is clicked. Then, all other cards are hidden*/
 
 /* section {
     display: none;
 } */
-
-
-
