@@ -46,9 +46,9 @@ var questions = [
   },
 ];
 
-// const nameofFunction =() =>{}
 var i = 0;
 
+//Displays questions from the array
 function showQuestions() {
   if (i < questions.length) {
     document.getElementById("questionContainer").innerHTML = `
@@ -64,9 +64,11 @@ function showQuestions() {
   } else {
     document.getElementById("questionContainer").innerHTML = ``;
     endGame();
+    document.querySelector("#showCheck").innerHTML = ``;
   }
 }
 
+//Ends the quiz
 function endGame() {
   i = 10;
   //showQuestions();
@@ -102,16 +104,25 @@ document.getElementById("start").onclick = function () {
 
     if (time == 0) {
       clearInterval(myInterval);
+      document.getElementById("questionContainer").innerHTML = ``;
+      endGame();
+      document.querySelector("#showCheck").innerHTML = ``;
     }
   }
-
-  //document.getElementById('start').style.display= "none"
 
   document.getElementById("startText").style.display = "none";
   showQuestions();
 };
-//document.getElementById('questionContainer').style.display = "block"
 
+//Stores submit form input
+document
+  .getElementById("submitForm")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    console.log("retainedInfo");
+  });
+
+//Displays "Correct!" or "Wrong!", and deducts time and score when answer is wrong.
 document.querySelector("#questionContainer").onclick = function (event) {
   console.log("clicked!");
   console.log(event.target.innerText);
