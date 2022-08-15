@@ -10,6 +10,24 @@ var formHide = document.getElementById("submitForm");
 
 formHide.style.display = "none";
 
+var startBtn = document.getElementById("start");
+
+startBtn.style.display = "inline-block";
+
+var backBtn = document.getElementById("goBack");
+
+backBtn.style.display = "none";
+
+// function backToStart() {
+//   var toggle = document.getElementById("startText");
+
+//   if (toggle.style.display === "none") {
+//     toggle.style.display === "block";
+//   } else {
+//     toggle.style.display === "none";
+//   }
+// }
+
 //Questions for the quiz
 var questions = [
   {
@@ -74,6 +92,8 @@ function endGame() {
   //showQuestions();
   console.log("Test");
   formHide.style.display = "block";
+  backBtn.style.display = "inline-block";
+  time = 0;
   //show display form here
 }
 
@@ -109,17 +129,36 @@ document.getElementById("start").onclick = function () {
       document.querySelector("#showCheck").innerHTML = ``;
     }
   }
-
   document.getElementById("startText").style.display = "none";
   showQuestions();
+  startBtn.style.display = "none";
 };
 
-//Stores submit form input
+//Stores submit form input and makes list with initials and high score
 document
-  .getElementById("submitForm")
+  .getElementById("submitButton")
   .addEventListener("click", function (event) {
     event.preventDefault();
     console.log("retainedInfo");
+    console.log(document.getElementById("Initials").value);
+    var inputValue = document.getElementById("Initials").value;
+    console.log(inputValue);
+
+    //puts info from submit form to local storage
+    window.localStorage.setItem("submitInfo", JSON.stringify(inputValue));
+
+    //retrieves info from local storage
+    var retrieve = JSON.parse(window.localStorage.getItem("submitInfo"));
+
+    var storageInfo = document.createElement("li");
+
+    var scoreList = document.querySelector(".scoreList");
+
+    scoreList.appendChild(storageInfo);
+
+    storageInfo.innerHTML = retrieve + " - " + score;
+
+    scoreList.style.display = "block";
   });
 
 //Displays "Correct!" or "Wrong!", and deducts time and score when answer is wrong.
@@ -140,6 +179,16 @@ document.querySelector("#questionContainer").onclick = function (event) {
   }
   i++;
   showQuestions();
+};
+
+document.getElementById("goBack").onclick = function () {
+  formHide.style.display = "none";
+  backBtn.style.display = "none";
+  document.getElementById("startText").style.display = "block";
+  document.getElementById("start").style.display = "inline-block";
+  i = 0;
+  score = 100;
+  document.querySelector(".scoreList").style.display = "none";
 };
 
 //there's a display function?
