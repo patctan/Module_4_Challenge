@@ -18,16 +18,6 @@ var backBtn = document.getElementById("goBack");
 
 backBtn.style.display = "none";
 
-// function backToStart() {
-//   var toggle = document.getElementById("startText");
-
-//   if (toggle.style.display === "none") {
-//     toggle.style.display === "block";
-//   } else {
-//     toggle.style.display === "none";
-//   }
-// }
-
 //Questions for the quiz
 var questions = [
   {
@@ -181,6 +171,7 @@ document.querySelector("#questionContainer").onclick = function (event) {
   showQuestions();
 };
 
+//Returns user to beginning of quiz when the "Go Back" button is clicked
 document.getElementById("goBack").onclick = function () {
   formHide.style.display = "none";
   backBtn.style.display = "none";
@@ -190,5 +181,3 @@ document.getElementById("goBack").onclick = function () {
   score = 100;
   document.querySelector(".scoreList").style.display = "none";
 };
-
-//there's a display function?
